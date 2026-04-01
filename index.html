@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - La Despistá</title>
+    <meta name="description" content="Ayúdanos a mejorar La Despistá y participa en nuestras promociones exclusivas.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Estilos 
+     CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Script JS-->
+    <script src="scripts/app.js" defer></script>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <img src="assets/la_despita_logo.jpg" alt="Logo La Despistá" class="logo-img">
+            <h1 class="logo-title">La Despistá</h1>
+            <p class="subtitle">Shishas & Sweet Treats</p>
+            <div class="divider"></div>
+            <p class="greeting">¡Hola! Nos encantaría conocer tu experiencia para seguir mejorando.</p>
+        </header>
+
+        <section class="form-wrapper glass">
+            <form id="feedbackForm" action="#" method="POST">
+                <div class="input-group">
+                    <input type="text" id="fullname" name="fullname" required placeholder=" " autocomplete="name">
+                    <label for="fullname">Nombre completo</label>
+                    <div class="input-glow"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder=" " autocomplete="email">
+                    <label for="email">Correo electrónico</label>
+                    <div class="input-glow"></div>
+                </div>
+
+                <div class="input-group">
+                    <select id="discovery" name="discovery" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="instagram">Instagram / TikTok</option>
+                        <option value="amigos">Amigos o Familiares</option>
+                        <option value="pasando">Pasaba por el local</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <label for="discovery" class="select-label">¿Cómo nos conociste?</label>
+                    <div class="input-glow"></div>
+                </div>
+
+                <div class="input-group textarea-group">
+                    <textarea id="suggestions" name="suggestions" rows="4" placeholder=" "></textarea>
+                    <label for="suggestions">¿Tienes alguna sugerencia para nosotros?</label>
+                    <div class="input-glow"></div>
+                </div>
+
+                <div class="checkbox-group">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="dataConsent" name="dataConsent" required>
+                        <span class="checkmark"></span>
+                        <span class="text">He leído y acepto la <a href="#">política de privacidad</a> sobre el tratamiento de mis datos.</span>
+                    </label>
+                </div>
+
+                <div class="checkbox-group">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="promoConsent" name="promoConsent">
+                        <span class="checkmark"></span>
+                        <span class="text">Quiero recibir promociones y novedades sobre shishas y meriendas exclusivas.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Enviar mis respuestas</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </form>
+
+            <div id="successMessage" class="success-message hidden">
+                <div class="success-icon">✓</div>
+                <h3>¡Gracias por tu tiempo!</h3>
+                <p>Tus respuestas han sido enviadas. Pronto recibirás sorpresas en tu email.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
