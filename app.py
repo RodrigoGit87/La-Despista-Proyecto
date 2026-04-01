@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import sqlite3
 #iniciar app
@@ -31,7 +31,7 @@ iniciar_db() #Llamar a la funcion al arrancar
 #Crear ruta
 @app.route("/",methods=["GET"])
 def saludo_inicial():
-    return{"mensaje":"El servidor de La despistá está funcionando"}
+    return render_template("index.html")
 
 
 """Para recibir el formulario de los clientes desde la web, los datos tienen q viajar desde index.html hasta app.py
