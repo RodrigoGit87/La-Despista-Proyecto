@@ -1,14 +1,18 @@
 from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS
 import sqlite3
+import os
+
+# Obtener la ruta absoluta de la carpeta donde está este archivo
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "la_despista.db")
+
 #iniciar app
 app = Flask(__name__)
-CORS(app)
 
 #Preparar la DB
 def iniciar_db():
-    #conecta con el archivo o lo crea si no existe
-    conexion=sqlite3.connect("la_despista.db")
+    #conecta con el archivo usando la ruta absoluta
+    conexion=sqlite3.connect(DB_PATH)
     cursor= conexion.cursor()
     #Escribimos el comando SQL para crear la tabla
     cursor.execute("""
@@ -50,8 +54,8 @@ def recibir_formulario():
     # Extraemos los datos que llegarán desde JavaScript (que vendrán en formato JSON)
     datos_cliente = request.json
     
-    #Conectar a la DB
-    conexion=sqlite3.connect("la_despista.db")
+    #Conectar a la DB con ruta absoluta
+    conexion=sqlite3.connect(DB_PATH)
     cursor= conexion.cursor()
 
     #Inserta fila con lso valores
