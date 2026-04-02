@@ -17,10 +17,10 @@ def iniciar_db():
             nombre TEXT NOT NULL,
             email TEXT NOT NULL,
             como_nos_conocio TEXT,
+            quejas TEXT,
             sugerencias TEXT,
-            acepta_datos BOOLEAN,
-            acepta_promos BOOLEAN
-        )
+            acepta_datos BOOLEAN
+         )
     """)
     conexion.commit() #Guardamos
     conexion.close()
@@ -52,15 +52,16 @@ def recibir_formulario():
 
     #Inserta fila con lso valores
     cursor.execute("""
-        INSERT INTO clientes (nombre, email, como_nos_conocio, sugerencias, acepta_datos, acepta_promos)
-        VALUES (?, ?, ?, ?, ?, ?)
+        INSERT INTO clientes (nombre, email, como_nos_conocio, quejas, sugerencias, acepta_datos, acepta_promos)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
     """, (
-        datos_cliente['fullname'], 
-        datos_cliente['email'], 
-        datos_cliente['discovery'], 
-        datos_cliente['suggestions'], 
-        datos_cliente['dataConsent'], 
-        datos_cliente['promoConsent']
+        datos_cliente.get('fullname', ''), #un string vacio para evitar errores si el cliente no manda el paquete entero.
+        datos_cliente.get('email', ''), 
+        datos_cliente.get('discovery', ''),
+        datos_cliente.get('complaints', ''),
+        datos_cliente.get('suggestions', ''), 
+        datos_cliente.get('dataConsent', False), 
+        datos_cliente.get('promoConsent', False)
     ))
     conexion.commit()
     conexion.close()
