@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.disabled = true;
 
         // -- LA MAGIA: ENVIAMOS LOS DATOS A PYTHON --
-        fetch('http://127.0.0.1:5000/recibir_datos', {
+        fetch('/recibir_datos', {
             method: 'POST', // Usamos POST porque estamos enviando (no pidiendo)
             headers: {
                 'Content-Type': 'application/json' // Le decimos a Python que va en formato JSON
