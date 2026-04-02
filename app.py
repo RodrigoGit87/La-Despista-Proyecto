@@ -33,6 +33,10 @@ iniciar_db() #Llamar a la funcion al arrancar
 def saludo_inicial():
     return render_template("index.html")
 
+@app.route("/privacidad",methods=["GET"])
+def politica_privacidad():
+    return render_template("privacidad.html")
+
 
 """Para recibir el formulario de los clientes desde la web, los datos tienen q viajar desde index.html hasta app.py
 Para hacer eso, necesitamos dos cosas:
