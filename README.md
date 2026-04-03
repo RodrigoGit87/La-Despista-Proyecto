@@ -1,6 +1,8 @@
 # La Despistá - Sistema de Feedback de Clientes
 
-Este es un proyecto personal desarrollado para el negocio local "La Despistá" con el objetivo de implementar un sistema digital de recogida de feedback de los clientes. El sistema permite, a través de un formulario web (accesible, por ejemplo, mediante un código QR en el establecimiento), recopilar opiniones, sugerencias y datos de contacto de los clientes de manera estructurada en una base de datos para su posterior análisis estadístico.
+Este es un proyecto real y personal desarrollado para el negocio local "La Despistá" con el objetivo de implementar un sistema digital de recogida de feedback de los clientes. El sistema permite, a través de un formulario web (accesible, por ejemplo, mediante un código QR en el establecimiento), recopilar opiniones, sugerencias y datos de contacto de los clientes de manera estructurada en una base de datos para su posterior análisis estadístico.
+
+Puedes consultar todos los detalles, el problema inicial y las métricas en el [Caso de Estudio](CASO_DE_ESTUDIO.md).
 
 ## Tecnologías Utilizadas
 
